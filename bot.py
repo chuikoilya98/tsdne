@@ -54,8 +54,10 @@ def saveUser(name, userId) :
 def start(update: Update, context: CallbackContext) :
     info = update.message.from_user
     name = info.first_name
+    lname = info.last_name
     userId= info.id
     #saveUser(name, userId)
+    context.bot.send_message(chat_id='331392389', text=f'User {name}  {lname} started AI bot')
     context.bot.send_message(chat_id=update.effective_chat.id, text="""Привет! Спасибо за то что проявил интерес к теме генеративных кроссовок
 @myataya_mayka - канал автора проекта
 
