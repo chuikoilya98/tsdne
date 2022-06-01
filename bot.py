@@ -8,7 +8,7 @@ import random
 import time
 import json
 
-token = '5299421123:AAF4srew9eNzm6wcWR8a-7wxQ--t6jLJE5o'
+token = '5299421123:AAGbXe6qtcMzYSbGjMwThuB6Z3MA6dngdBs'
 updater = Updater(token= token, use_context=True)
 dispatcher = updater.dispatcher
 
