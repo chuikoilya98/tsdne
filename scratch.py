@@ -9,23 +9,30 @@ import time
 import json
 
 def saveUser(name, userId) :
-    with open(pt.abspath('users.json'), 'r') as file:
+    with open(pt.abspath('data/users.json'), 'r') as file:
         data = json.load(file)
         users = data['users']
+        
+        for u in users:
+            if userId == u['id'] :
+                print(False)
+            else:
+                newUser = {
+                    'name' : name,
+                    'id' : userId
+                }
 
-        newUser = {
-            'name' : name,
-            'id' : userId
-        }
+                users.append(newUser)
 
-        users.append(newUser)
+                print(users)
 
-        with open(pt.abspath('users.json'), 'w') as f :
-            data = {
-                'users' : users
-            }
-            result = json.dumps(data)
-            f.write(result)
+                with open(pt.abspath('data/users.json'), 'w') as f :
+                    data = {
+                        'users' : users
+                    }
+                    result = json.dumps(data)
+                    f.write(result)
 
 
-saveUser(1,2)
+
+saveUser(2,5)

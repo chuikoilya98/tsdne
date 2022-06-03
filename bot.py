@@ -13,7 +13,7 @@ updater = Updater(token= token, use_context=True)
 dispatcher = updater.dispatcher
 
 def getRandom(count=10) :
-    with open(pt.abspath('result.txt'), 'r') as file:
+    with open(pt.abspath('data/result.txt'), 'r') as file:
         links = []
         for row in file:
             name = row.replace('\n', '')
@@ -44,7 +44,7 @@ def saveUser(name, userId) :
 
         users.append(newUser)
 
-        with open(pt.abspath('users.json'), 'w') as f :
+        with open(pt.abspath('data/users.json'), 'w') as f :
             data = {
                 'users' : users
             }
